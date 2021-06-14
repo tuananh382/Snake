@@ -1,0 +1,38 @@
+#define BODY 'X'
+// Vẽ rắn từng phần và toàn phần
+void drawSnakePart(Point p)
+{
+gotoxy(p.x, p.y);
+cout << BODY;
+}
+void drawSnake()
+{
+for (size_t i = 0; i < snake.size(); i++)
+drawSnakePart(snake[i]);
+}
+
+// Tạo 1 khung hoạt động cho rắn
+void drawBox()
+{
+for (size_t i = 0; i < WIDTH; i++)
+cout << '#';
+gotoxy(0, HEIGHT);
+for (size_t i = 0; i < WIDTH; i++)
+cout << '#';
+for (size_t i = 1; i < HEIGHT; i++)
+{
+gotoxy(0, i);
+cout << '#';
+}
+for (size_t i = 1; i < HEIGHT; i++)
+{
+gotoxy(WIDTH, i);
+cout << '#';
+}
+}
+// Tạo 1 bảng điểm số
+void displayScore()
+{
+gotoxy(WIDTH + 5, 2);
+cout << "Diem cua ban la: " << score;
+}
